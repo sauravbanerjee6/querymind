@@ -216,3 +216,52 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+test.*
+
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build Output
+dist/
+build/
+out/
+.next/
+.vercel
+
+# Environment Variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env.toml
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Testing
+coverage/
+__snapshots__/
+
+# IDE / Editor
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS Metadata
+.DS_Store
+Thumbs.db
+
+# TypeScript Cache
+*.tsbuildinfo
