@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 
 from app.routes.connect import sessions, get_gemini
-from app.services.query_service import run_query_from_response
+from app.services.query_services import run_query_from_response
 
 router = APIRouter()
 

@@ -7,7 +7,7 @@ from app.connectors.base import BaseConnector, SchemaSnapshot
 from app.connectors.postgres import PostgresConnector
 from app.connectors.mysql import MySQLConnector
 from app.connectors.sqlite import SQLiteConnector
-from app.services.gemini_service import GeminiService
+from app.services.gemini_services import GeminiService
 
 router = APIRouter()
 

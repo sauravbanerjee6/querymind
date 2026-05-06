@@ -1,7 +1,7 @@
 import google.generativeai as genai
 from google.generativeai import GenerativeModel
 from app.connectors.base import SchemaSnapshot
-from app.services.schema_service import build_schema_context
+from app.services.schema_services import build_schema_context
 
 
 class GeminiService:
@@ -12,7 +12,7 @@ class GeminiService:
 
     def __init__(self, api_key: str):
         genai.configure(api_key=api_key)
-        self._model = GenerativeModel("gemini-1.5-flash")
+        self._model = GenerativeModel("models/gemini-3.1-pro-preview")
 
     def start_session(self, schema: SchemaSnapshot):
         """
