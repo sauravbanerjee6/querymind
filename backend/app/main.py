@@ -10,10 +10,24 @@ load_dotenv()
 
 app = FastAPI(title="DataLens API", version="1.0.0")
 
-# CORS — allow the Vite dev server
+# Define allowed origins explicitly
+# CORS requires an exact match including protocol and port
+origins = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "http://localhost:5174",
+    "http://127.0.0.1:5174",
+]
+
+# Add FRONTEND_URL from .env if it exists
+frontend_url = os.getenv("FRONTEND_URL")
+if frontend_url:
+    # Ensure no trailing slash for the origin string
+    origins.append(frontend_url.rstrip("/"))
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[os.getenv("FRONTEND_URL", "http://localhost:5173")],
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

@@ -15,6 +15,12 @@ export interface ConnectPayload {
   file_path?: string;
 }
 
+export interface TableInfo {
+  table_name: string;
+  row_count: number;
+  columns: { column_name: string; data_type: string; is_nullable: string }[];
+}
+
 export interface ChatMessage {
   role: 'user' | 'assistant';
   content: string;
@@ -23,11 +29,7 @@ export interface ChatMessage {
   timestamp: Date;
 }
 
-export const connectDB = (payload: ConnectPayload) =>
-  api.post('/connect', payload).then(r => r.data);
-
-export const disconnectDB = (sessionId: string) =>
-  api.delete(`/connect/${sessionId}`).then(r => r.data);
-
-export const sendChat = (sessionId: string, message: string) =>
+export const connectDB  = (payload: ConnectPayload) => api.post('/connect', payload).then(r => r.data);
+export const disconnectDB = (sessionId: string)     => api.delete(`/connect/${sessionId}`).then(r => r.data);
+export const sendChat   = (sessionId: string, message: string) =>
   api.post('/chat', { session_id: sessionId, message }).then(r => r.data);
