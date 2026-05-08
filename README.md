@@ -1,1 +1,1 @@
-# querymind
+QueryMind lets you connect any PostgreSQL, MySQL, or SQLite database and chat with your data. It introspects your schema, generates SQL via Gemini, executes it, and automatically renders charts — no SQL knowledge required.
